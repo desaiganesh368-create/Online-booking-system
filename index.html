@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt. Ayurvedic Hospital, Unjha - Appointment System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="emergency-banner">
+        <p><i class="fas fa-exclamation-triangle"></i> Emergency Helpline: +91 2767 XXXXXX | Ambulance: 108 | Open 24/7</p>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <i class="fas fa-seedling hospital-logo"></i>
+            <div class="logo-text">
+                <h1>Government Ayurvedic Hospital</h1>
+                <span class="location">Unjha, Gujarat</span>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-target="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-target="register">Register</a></li>
+                <li><a href="#" class="nav-link" data-target="login">Login</a></li>
+                <li><a href="#" class="nav-link" data-target="booking">Book Appointment</a></li>
+                <li><a href="#" class="nav-link" data-target="doctor-dash">Doctor Portal</a></li>
+                <li><a href="#" class="nav-link" data-target="admin-dash">Admin Portal</a></li>
+                <li><a href="#" class="nav-link" data-target="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <main>
+
+        <section id="home" class="page-section active">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <h2>Traditional Healing for Modern Living</h2>
+                    <p>Experience holistic healthcare backed by centuries of Ayurvedic wisdom and authorized by the Government of Gujarat.</p>
+                    <button class="btn btn-primary navigate-btn" data-target="booking">Book Your Appointment Now <i class="fas fa-calendar-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="stats-section grid-4">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>15,000+</h3>
+                    <p>Patients Healed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>18+</h3>
+                    <p>Expert Ayurvedic Doctors</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clinic-medical"></i>
+                    <h3>8</h3>
+                    <p>Specialized Departments</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-award"></i>
+                    <h3>100%</h3>
+                    <p>Govt. Certified Care</p>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>About Our Hospital</h2>
+                <p>The Government Ayurvedic Hospital, Unjha, stands as a pillar of authentic Ayurvedic practice, integrating holistic health systems with modern diagnostics to render accessible, state-of-the-art public healthcare programs.</p>
+            </div>
+
+            <div class="services-section">
+                <h2 class="section-title">Specialized Ayurvedic Departments</h2>
+                <div class="grid-4">
+                    <div class="service-card">
+                        <i class="fas fa-mortar-pestle"></i>
+                        <h3>Panchakarma</h3>
+                        <p>Complete body detoxification and rejuvenation therapies.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Kayachikitsa</h3>
+                        <p>General internal medicine treatments for chronic ailments.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-band-aid"></i>
+                        <h3>Shalya Tantra</h3>
+                        <p>Traditional surgical maneuvers and para-surgical management.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-spa"></i>
+                        <h3>Yoga & Naturopathy</h3>
+                        <p>Holistic lifestyle corrections and mental wellness procedures.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h2><i class="fas fa-leaf"></i> Daily Dinacharya (Ayurvedic Tips)</h2>
+                <div class="tips-carousel">
+                    <div class="tip-item"><strong>Ushapan:</strong> Drink warm water early in the morning to kickstart metabolic tasks and cleanse the digestive system.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="page-section hidden">
+            <div class="form-container">
+                <h2><i class="fas fa-user-plus"></i> Patient Registration</h2>
+                <form id="registration-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name*</label>
+                            <input type="text" id="reg-name" required placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender*</label>
+                            <select id="reg-gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth*</label>
+                            <input type="date" id="reg-dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number*</label>
+                            <input type="tel" id="reg-mobile" required placeholder="10-digit number">
+                        </div>
+                        <div class="form-group">
+                            <label>Email ID</label>
+                            <input type="email" id="reg-email" placeholder="example@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Identification/Aadhaar Reference Token*</label>
+                            <input type="text" id="reg-aadhaar" required placeholder="Format: XXXX-XXXX-XXXX" maxlength="14">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Address*</label>
+                            <textarea id="reg-address" rows="2" required placeholder="Complete residential address"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Password*</label>
+                            <input type="password" id="reg-pass" required placeholder="Minimum 6 characters">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password*</label>
+                            <input type="password" id="reg-confirm" required placeholder="Confirm password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit-btn">Register Secure Account</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="login" class="page-section hidden">
+            <div class="form-container form-short">
+                <h2><i class="fas fa-sign-in-alt"></i> Patient Portal Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>Mobile Number or Email</label>
+                        <input type="text" id="login-id" required placeholder="Enter registered credentials">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="login-pass" required placeholder="••••••••">
+                            <i class="fas fa-eye" id="toggle-login-pass"></i>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label><input type="checkbox"> Remember Me</label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit-btn">Authorize Access</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="booking" class="page-section hidden">
+            <div class="form-container">
+                <h2><i class="fas fa-calendar-check"></i> Book Medical Appointment</h2>
+                <form id="booking-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Patient Full Name</label>
+                            <input type="text" id="book-name" required placeholder="Authorized Patient Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Patient Secure ID Reference</label>
+                            <input type="text" id="book-id" required placeholder="Auto-filled or input lookup token">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Mobile Number</label>
+                            <input type="tel" id="book-mobile" required placeholder="10-digit primary number">
+                        </div>
+                        <div class="form-group">
+                            <label>Clinical Department*</label>
+                            <select id="book-dept" required>
+                                <option value="">Select Department</option>
+                                <option value="General Ayurveda">General Ayurveda</option>
+                                <option value="Panchakarma">Panchakarma</option>
+                                <option value="Kayachikitsa">Kayachikitsa</option>
+                                <option value="Shalya Tantra">Shalya Tantra</option>
+                                <option value="Shalakya Tantra">Shalakya Tantra</option>
+                                <option value="Balroga">Balroga</option>
+                                <option value="Swasthavritta">Swasthavritta</option>
+                                <option value="Yoga and Naturopathy">Yoga and Naturopathy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Assigned Medical Specialist (Doctor)*</label>
+                            <select id="book-doctor" required disabled>
+                                <option value="">Select Department First</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Target Appointment Date*</label>
+                            <input type="date" id="book-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time Slot*</label>
+                            <select id="book-slot" required>
+                                <option value="">Select Time Window</option>
+                                <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+                                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                                <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+                                <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Brief Presentation of Symptoms / Medical History</label>
+                            <textarea id="book-symptoms" rows="3" placeholder="Describe clinical symptoms or history details here..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit-btn">Schedule Diagnostic Session</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="confirmation" class="page-section hidden">
+            <div class="receipt-card">
+                <div class="receipt-header">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h2>Appointment Successfully Manifested</h2>
+                    <p>Present this physical ticket copy or systemic ID upon physical verification desks.</p>
+                </div>
+                <hr>
+                <div class="receipt-body" id="receipt-details">
+                    </div>
+                <div class="receipt-actions">
+                    <button class="btn btn-secondary" onclick="window.print()"><i class="fas fa-print"></i> Print Out Receipt</button>
+                    <button class="btn btn-primary navigate-btn" data-target="home"><i class="fas fa-home"></i> Return to Main Index</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="doctor-dash" class="page-section hidden">
+            <div class="dashboard-wrapper">
+                <h2>Clinical Operations Desk (Doctor Dashboard)</h2>
+                <div class="search-bar-container">
+                    <input type="text" id="doc-search" placeholder="Search roster by patient token details or systemic tracking variables...">
+                </div>
+                <div class="table-responsive">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>Roster ID</th>
+                                <th>Patient Identity</th>
+                                <th>Specialist Branch</th>
+                                <th>Schedule Windows</th>
+                                <th>Status Track</th>
+                            </tr>
+                        </thead>
+                        <tbody id="doctor-appointments-tbody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin-dash" class="page-section hidden">
+            <div class="dashboard-wrapper">
+                <h2>System Administration Portal Dashboard</h2>
+                <div class="grid-4 metric-container">
+                    <div class="metric-card bg-green">
+                        <h4 id="admin-total-appointments">0</h4>
+                        <p>Total Booked Sessions</p>
+                    </div>
+                    <div class="metric-card bg-blue">
+                        <h4 id="admin-today-patients">0</h4>
+                        <p>Active Registered Core Profiles</p>
+                    </div>
+                    <div class="metric-card bg-orange">
+                        <h4>18</h4>
+                        <p>Rostered Doctors Available</p>
+                    </div>
+                    <div class="metric-card bg-purple">
+                        <h4>INR 0.00</h4>
+                        <p>Consolidated Public Remittance</p>
+                    </div>
+                </div>
+                <h3 style="margin-top:2rem; margin-bottom:1rem;">Master Operational Live Streams</h3>
+                <div class="table-responsive">
+                    <table class="dashboard-table">
+                        <thead>
+                            <tr>
+                                <th>ID Reference</th>
+                                <th>Target Name</th>
+                                <th>Assigned Department</th>
+                                <th>Target Date</th>
+                                <th>Operational Flag</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-appointments-tbody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section hidden">
+            <div class="grid-2">
+                <div class="contact-info-block">
+                    <h2>Reach Out to Our Administrative Offices</h2>
+                    <p><i class="fas fa-map-marker-alt"></i> Near Station Road, Unjha, Mehsana District, Gujarat - 384170</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 2767 254321</p>
+                    <p><i class="fas fa-envelope"></i> contact-ayush-unjha@gujarat.gov.in</p>
+                    <div class="map-placeholder">
+                        <p><i class="fas fa-map-marked-alt"></i> [Google Maps Interface Container Reference Location - Unjha]</p>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <h3>Submit Electronic Inquiry</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" required placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email</label>
+                            <input type="email" required placeholder="name@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry Message</label>
+                            <textarea rows="4" required placeholder="Write your text instructions or messages here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Transmit Inquiry Packet</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Government Ayurvedic Hospital, Unjha. Directorate of ISM&H, Department of Health & Family Welfare, Government of Gujarat. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
